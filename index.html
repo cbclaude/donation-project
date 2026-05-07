@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wounded Warrior Project — Official Store</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════ LOGIN ═══════════════════════════════════════ -->
+<div class="screen on" id="s-login">
+  <div class="lh">
+    <div class="lmark">
+      <div class="wwp-wordmark-login">
+        <div class="wwp-wm-text">WOUNDED</div>
+        <div class="wwp-wm-text">WARRIOR</div>
+        <div class="wwp-wm-text" style="position:relative;">PROJECT<span class="wwp-wm-reg" style="font-size:14px;vertical-align:super;margin-left:2px;position:absolute;">®</span></div>
+      </div>
+      <div class="lsub">Official Store · Authorized Access Only</div>
+    </div>
+  </div>
+  <div class="lb">
+    <div class="lcard">
+      <h2>Member Login</h2>
+      <p>This store is restricted to WWP members, veterans, and authorized personnel. Enter your credentials to access the store.</p>
+      <label class="fl">Username / Member ID</label>
+      <input class="li" type="text" id="lu" placeholder="Enter username or member ID">
+      <label class="fl">Password</label>
+      <input class="li" type="password" id="lp" placeholder="Enter password">
+      <div class="hint">Demo — username: <span>warrior</span> &nbsp;·&nbsp; password: <span>wwp2026</span></div>
+      <button class="btn-red" onclick="doLogin()">
+        <i class="ti ti-lock" style="font-size:12px;vertical-align:-1px;"></i> &nbsp;Sign In to Store
+      </button>
+      <div class="lerr" id="lerr">Incorrect credentials. Please try again.</div>
+    </div>
+  </div>
+  <div class="lfoot"><p>Need access? <a onclick="">Request membership</a> &nbsp;·&nbsp; <a onclick="showContactPage()">Contact support</a></p></div>
+</div>
+
+<!-- ═══════════════════════════════════════ SITE ═══════════════════════════════════════ -->
+<div class="screen" id="s-site">
+  <div class="ann"><strong>Free shipping on orders $75+</strong> &nbsp;·&nbsp; Direct Manufacturer Partnerships &nbsp;·&nbsp; Proceeds support WWP veterans</div>
+
+    <nav>
+    <div class="nm" style="position:relative;">
+      <div class="nlogo" onclick="showPg('home')">
+        <div class="wwp-wordmark-nav">WOUNDED WARRIOR PROJECT<span class="wwp-reg">®</span></div>
+      </div>
+      <!-- Products dropdown inline -->
+      <div class="mnitem" id="mn-products" onmouseenter="openDrop('products')" onmouseleave="closeDrop('products')" style="align-self:stretch;display:flex;align-items:center;">
+        <button class="mnbtn" onclick="toggleDrop('products')">Products <i class="ti ti-chevron-down mnchev" id="chev-products"></i></button>
+        <div class="mndrop" id="drop-products">
+        <div class="cb-megamenu">
+          <!-- COL 1 -->
+          <div class="cb-col">
+            <div class="cb-group">
+              <div class="cb-group-head">Audio</div>
+              <a class="cb-link" onclick="filterCatClose('Audio','products')">Home Audio</a>
+              <a class="cb-link" onclick="filterCatClose('Audio','products')">Portable Audio</a>
+              <a class="cb-link" onclick="filterCatClose('Audio','products')">Wireless &amp; Multiroom Audio</a>
+            </div>
+            <div class="cb-group">
+              <div class="cb-group-head">Automotive, Marine &amp; GPS</div>
+              <a class="cb-link" onclick="filterCatClose('GPS &amp; Automotive','products')">Booster Seats</a>
+              <a class="cb-link" onclick="filterCatClose('GPS &amp; Automotive','products')">Dash &amp; Backup Cameras</a>
+              <a class="cb-link" onclick="filterCatClose('GPS &amp; Automotive','products')">GPS</a>
+              <a class="cb-link" onclick="filterCatClose('GPS &amp; Automotive','products')">Interior Accessories</a>
+              <a class="cb-link" onclick="filterCatClose('GPS &amp; Automotive','products')">Marine Audio</a>
+              <a class="cb-link" onclick="filterCatClose('GPS &amp; Automotive','products')">Vehicle Audio</a>
+            </div>
+            <div class="cb-group">
+              <div class="cb-group-head">Camera, Photo &amp; Video</div>
+              <a class="cb-link" onclick="filterCatClose('Cameras','products')">Cameras &amp; Lenses</a>
+              <a class="cb-link" onclick="filterCatClose('Cameras','products')">Security Cameras</a>
+              <a class="cb-link" onclick="filterCatClose('Cameras','products')">Video Cameras</a>
+            </div>
+            <div class="cb-group">
+              <div class="cb-group-head">Cell Phones &amp; Accessories</div>
+              <a class="cb-link" onclick="filterCatClose('Computers','products')">Phone Accessories</a>
+            </div>
+            <div class="cb-group">
+              <div class="cb-group-head">Computers</div>
+              <a class="cb-link" onclick="filterCatClose('Computers','products')">Computer Accessories</a>
+              <a class="cb-link" onclick="filterCatClose('Computers','products')">Gaming Accessories</a>
+              <a class="cb-link" onclick="filterCatClose('Computers','products')">PC Gaming</a>
+            </div>
+            <div class="cb-group">
+              <div class="cb-group-head">Garden &amp; Garage</div>
+              <a class="cb-link" onclick="filterCatClose('Home &amp; Office','products')">Garage</a>
+              <a class="cb-link" onclick="filterCatClose('Home &amp; Office','products')">Garden</a>
+              <a class="cb-link" onclick="filterCatClose('Home &amp; Office','products')">Patio</a>
+            </div>
+          </div>
+          <div class="cb-divider"></div>
+          <!-- COL 2 -->
+          <div class="cb-col">
+            <div class="cb-group">
+              <div class="cb-group-head">Health &amp; Fitness</div>
+              <a class="cb-link" onclick="filterCatClose('Health &amp; Fitness','products')">Activity Trackers &amp; Pedometers</a>
+              <a class="cb-link" onclick="filterCatClose('Health &amp; Fitness','products')">First Aid</a>
+              <a class="cb-link" onclick="filterCatClose('Health &amp; Fitness','products')">Health Care</a>
+              <a class="cb-link" onclick="filterCatClose('Health &amp; Fitness','products')">Health &amp; Fitness Accessories</a>
+              <a class="cb-link" onclick="filterCatClose('Health &amp; Fitness','products')">Home Gym Equipment</a>
+              <a class="cb-link" onclick="filterCatClose('Health &amp; Fitness','products')">Protein &amp; Fitness</a>
+              <a class="cb-link" onclick="filterCatClose('Health &amp; Fitness','products')">Sleep Care</a>
+              <a class="cb-link" onclick="filterCatClose('Outdoor &amp; Sports','products')">Sports &amp; Outdoor Equipment</a>
+              <a class="cb-link" onclick="filterCatClose('Health &amp; Fitness','products')">Vitamins &amp; Supplements</a>
+            </div>
+            <div class="cb-group">
+              <div class="cb-group-head">Home &amp; Office</div>
+              <a class="cb-link" onclick="filterCatClose('Home &amp; Office','products')">Appliances</a>
+              <a class="cb-link" onclick="filterCatClose('Home &amp; Office','products')">Calculators</a>
+              <a class="cb-link" onclick="filterCatClose('Home &amp; Office','products')">Clocks &amp; Clock Radios</a>
+              <a class="cb-link" onclick="filterCatClose('Home &amp; Office','products')">Electronic Dictionaries</a>
+              <a class="cb-link" onclick="filterCatClose('Home &amp; Office','products')">Fire Safety</a>
+              <a class="cb-link" onclick="filterCatClose('Home &amp; Office','products')">Home Improvement</a>
+              <a class="cb-link" onclick="filterCatClose('Home &amp; Office','products')">Household Essentials</a>
+              <a class="cb-link" onclick="filterCatClose('Home &amp; Office','products')">Outdoor Living</a>
+              <a class="cb-link" onclick="filterCatClose('Home &amp; Office','products')">Pet Supplies &amp; Tech</a>
+              <a class="cb-link" onclick="filterCatClose('Home &amp; Office','products')">Projectors &amp; Screens</a>
+              <a class="cb-link" onclick="filterCatClose('Home &amp; Office','products')">Security &amp; Surveillance</a>
+              <a class="cb-link" onclick="filterCatClose('Home &amp; Office','products')">Smart Home</a>
+              <a class="cb-link" onclick="filterCatClose('Home &amp; Office','products')">Telephone &amp; Communications</a>
+              <a class="cb-link" onclick="filterCatClose('Home &amp; Office','products')">Wi-Fi &amp; Networking</a>
+            </div>
+          </div>
+          <div class="cb-divider"></div>
+          <!-- COL 3 -->
+          <div class="cb-col">
+            <div class="cb-group">
+              <div class="cb-group-head">Kitchen &amp; Housewares</div>
+              <a class="cb-link" onclick="filterCatClose('Kitchen','products')">Bar Tools</a>
+              <a class="cb-link" onclick="filterCatClose('Kitchen','products')">Blenders</a>
+              <a class="cb-link" onclick="filterCatClose('Kitchen','products')">Coffee, Tea &amp; Water</a>
+              <a class="cb-link" onclick="filterCatClose('Kitchen','products')">Cookware</a>
+              <a class="cb-link" onclick="filterCatClose('Kitchen','products')">Cutlery</a>
+              <a class="cb-link" onclick="filterCatClose('Kitchen','products')">Food Containers</a>
+              <a class="cb-link" onclick="filterCatClose('Kitchen','products')">Food Processors</a>
+              <a class="cb-link" onclick="filterCatClose('Kitchen','products')">Hydration</a>
+              <a class="cb-link" onclick="filterCatClose('Kitchen','products')">Kitchen Tools &amp; Gadgets</a>
+              <a class="cb-link" onclick="filterCatClose('Kitchen','products')">Mixers &amp; Accessories</a>
+              <a class="cb-link" onclick="filterCatClose('Kitchen','products')">Toasters &amp; Toaster Ovens</a>
+            </div>
+            <div class="cb-group">
+              <div class="cb-group-head">Musical Instruments</div>
+              <a class="cb-link" onclick="filterCatClose('Musical Instruments','products')">Acoustic Guitar</a>
+              <a class="cb-link" onclick="filterCatClose('Musical Instruments','products')">Bass Guitars</a>
+              <a class="cb-link" onclick="filterCatClose('Musical Instruments','products')">Drums</a>
+              <a class="cb-link" onclick="filterCatClose('Musical Instruments','products')">Electric Guitar</a>
+              <a class="cb-link" onclick="filterCatClose('Musical Instruments','products')">Keyboards</a>
+              <a class="cb-link" onclick="filterCatClose('Musical Instruments','products')">Pro Audio</a>
+              <a class="cb-link" onclick="filterCatClose('Musical Instruments','products')">Recording Equipment</a>
+              <a class="cb-link" onclick="filterCatClose('Musical Instruments','products')">Ukuleles, Mandolins &amp; Banjos</a>
+            </div>
+            <div class="cb-group">
+              <div class="cb-group-head">Personal Care &amp; Beauty</div>
+              <a class="cb-link" onclick="filterCatClose('Home &amp; Office','products')">Hair Care</a>
+              <a class="cb-link" onclick="filterCatClose('Home &amp; Office','products')">Jewelry</a>
+              <a class="cb-link" onclick="filterCatClose('Home &amp; Office','products')">Perfumes &amp; Colognes</a>
+              <a class="cb-link" onclick="filterCatClose('GPS &amp; Automotive','products')">Watches</a>
+            </div>
+          </div>
+          <div class="cb-divider"></div>
+          <!-- COL 4 -->
+          <div class="cb-col">
+            <div class="cb-group">
+              <div class="cb-group-head">Pet Supplies</div>
+              <a class="cb-link" onclick="filterCatClose('Home &amp; Office','products')">Cat Supplies</a>
+              <a class="cb-link" onclick="filterCatClose('Outdoor &amp; Sports','products')">Dog Supplies</a>
+              <a class="cb-link" onclick="filterCatClose('Home &amp; Office','products')">Other Animals</a>
+            </div>
+            <div class="cb-group">
+              <div class="cb-group-head">Smart Home &amp; Security</div>
+              <a class="cb-link" onclick="filterCatClose('Home &amp; Office','products')">Connected Home</a>
+              <a class="cb-link" onclick="filterCatClose('Home &amp; Office','products')">Surveillance &amp; Security</a>
+            </div>
+            <div class="cb-group">
+              <div class="cb-group-head">Sports &amp; Outdoor Recreation</div>
+              <a class="cb-link" onclick="filterCatClose('GPS &amp; Automotive','products')">Adventure &amp; GPS Watches</a>
+              <a class="cb-link" onclick="filterCatClose('Outdoor &amp; Sports','products')">Camping &amp; Hiking</a>
+              <a class="cb-link" onclick="filterCatClose('Outdoor &amp; Sports','products')">Cycling</a>
+              <a class="cb-link" onclick="filterCatClose('Outdoor &amp; Sports','products')">Generators &amp; Portable Power</a>
+              <a class="cb-link" onclick="filterCatClose('Outdoor &amp; Sports','products')">Golf</a>
+              <a class="cb-link" onclick="filterCatClose('GPS &amp; Automotive','products')">GPS Navigation Units</a>
+              <a class="cb-link" onclick="filterCatClose('Outdoor &amp; Sports','products')">Hunting &amp; Shooting</a>
+              <a class="cb-link" onclick="filterCatClose('Outdoor &amp; Sports','products')">Knives &amp; Tools</a>
+              <a class="cb-link" onclick="filterCatClose('Outdoor &amp; Sports','products')">Optics</a>
+              <a class="cb-link" onclick="filterCatClose('Outdoor &amp; Sports','products')">Outdoor Accessories</a>
+              <a class="cb-link" onclick="filterCatClose('Outdoor &amp; Sports','products')">Sports</a>
+              <a class="cb-link" onclick="filterCatClose('Outdoor &amp; Sports','products')">Telescopes</a>
+            </div>
+            <div class="cb-group">
+              <div class="cb-group-head">Tablets &amp; e-Readers</div>
+              <a class="cb-link" onclick="filterCatClose('Computers','products')">Tablets</a>
+            </div>
+            <div class="cb-group">
+              <div class="cb-group-head">Toys, Kids &amp; Baby</div>
+              <a class="cb-link" onclick="filterCatClose('Home &amp; Office','products')">Baby</a>
+              <a class="cb-link" onclick="filterCatClose('Home &amp; Office','products')">Toys</a>
+            </div>
+            <div class="cb-group">
+              <div class="cb-group-head">Travel &amp; Luggage</div>
+              <a class="cb-link" onclick="filterCatClose('Home &amp; Office','products')">Luggage</a>
+              <a class="cb-link" onclick="filterCatClose('Home &amp; Office','products')">Travel Products</a>
+            </div>
+            <div class="cb-group">
+              <div class="cb-group-head">Video Games</div>
+              <a class="cb-link" onclick="filterCatClose('Computers','products')">Nintendo</a>
+              <a class="cb-link" onclick="filterCatClose('Computers','products')">PlayStation</a>
+              <a class="cb-link" onclick="filterCatClose('Computers','products')">Xbox</a>
+            </div>
+            <div class="cb-group">
+              <div class="cb-group-head">WiFi &amp; Networking</div>
+              <a class="cb-link" onclick="filterCatClose('Computers','products')">Networking</a>
+              <a class="cb-link" onclick="filterCatClose('Computers','products')">WiFi</a>
+            </div>
+            <div style="margin-top:1rem;padding-top:0.75rem;border-top:1px solid var(--border);">
+              <a class="cb-link cb-all" onclick="showPgClose('shop','products')">&#9654; View All Products</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <!-- Brands dropdown inline -->
+      <div class="mnitem" id="mn-brands" onmouseenter="openDrop('brands')" onmouseleave="closeDrop('brands')" style="align-self:stretch;display:flex;align-items:center;">
+        <button class="mnbtn" onclick="toggleDrop('brands')">Brands <i class="ti ti-chevron-down mnchev" id="chev-brands"></i></button>
+        <div class="mndrop" id="drop-brands">
+          <div style="padding:1.25rem 1.5rem;">
+            <div class="mnbrands-grid" id="brands-grid"></div>
+          </div>
+        </div>
+      </div>
+      <div class="nsearch">
+        <i class="ti ti-search" style="cursor:pointer;" onclick="handleSearch()"></i>
+        <input type="text" id="search-input" placeholder="Search Garmin, Wusthof, Logitech…"
+          oninput="handleSearch()" onkeydown="if(event.key==='Enter')handleSearch()">
+        <button id="search-clear" onclick="clearSearch()" style="display:none;background:none;border:none;cursor:pointer;padding:0 10px;color:rgba(255,255,255,0.5);font-size:16px;line-height:1;" title="Clear search">×</button>
+      </div>
+      <div class="nacts">
+        <button class="na" onclick="showPg('home')"><i class="ti ti-home"></i><span>Home</span></button>
+        <button class="na crel" onclick="showPg('cart')">
+          <i class="ti ti-shopping-cart"></i><span>Cart</span>
+          <span class="cbdg" id="cbdg">0</span>
+        </button>
+        <button class="na" onclick="doLogout()"><i class="ti ti-logout"></i><span>Sign Out</span></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="site-inner">
+
+    <!-- ── HOME ── -->
+    <div class="pg on" id="pg-home">
+      <div class="hero">
+        <div class="hl">
+          <div class="hflag"><div class="hline"></div><div class="htag">Official WWP Store</div></div>
+          <h1 class="htitle">Top Brands.<br><em>Real Mission.</em></h1>
+          <p class="hbody">Shop Garmin, Wusthof, Logitech, Polaroid, ATN, Vaultek and more — all authentic, brand new, with full manufacturer warranty. Every purchase supports Wounded Warrior Project veterans and their families.</p>
+          <button class="btn-primary" onclick="showPg('shop')">Shop All Products</button>
+        </div>
+        <div class="hr">
+          <div class="hfeat" onclick="showPg('shop')"><div class="fic"><i class="ti ti-heart"></i></div><div class="fb"><h4>Supports WWP Mission</h4><p>Every purchase funds veteran programs</p></div></div>
+          <div class="hfeat" onclick="showPg('shop')"><div class="fic"><i class="ti ti-certificate"></i></div><div class="fb"><h4>Direct Manufacturer Partnerships</h4><p>Brand New · Authentic · Full Manufacturer Warranty</p></div></div>
+          <div class="hfeat" onclick="showPg('shop')"><div class="fic"><i class="ti ti-truck-delivery"></i></div><div class="fb"><h4>Free Shipping Over $75</h4><p>Fast, reliable delivery to your door</p></div></div>
+        </div>
+      </div>
+
+      <div class="brand-ticker-wrap">
+        <div class="brand-ticker-label">Shop by Brand</div>
+        <div class="brand-ticker-mask">
+          <div class="brand-ticker" id="brand-ticker"></div>
+        </div>
+      </div>
+
+      <div class="ctiles">
+        <div class="ctile" onclick="filterCat('GPS & Automotive')"><i class="ti ti-gps"></i><div class="ctname">GPS & Auto</div><div class="ctcount">62 products</div></div>
+        <div class="ctile" onclick="filterCat('Audio')"><i class="ti ti-device-speaker"></i><div class="ctname">Audio</div><div class="ctcount">48 products</div></div>
+        <div class="ctile" onclick="filterCat('Health & Fitness')"><i class="ti ti-heartbeat"></i><div class="ctname">Health & Fitness</div><div class="ctcount">91 products</div></div>
+        <div class="ctile" onclick="filterCat('Kitchen')"><i class="ti ti-tools-kitchen-2"></i><div class="ctname">Kitchen</div><div class="ctcount">54 products</div></div>
+        <div class="ctile" onclick="filterCat('Musical Instruments')"><i class="ti ti-guitar-pick"></i><div class="ctname">Instruments</div><div class="ctcount">37 products</div></div>
+        <div class="ctile" onclick="filterCat('Cameras')"><i class="ti ti-camera"></i><div class="ctname">Cameras</div><div class="ctcount">35 products</div></div>
+        <div class="ctile" onclick="filterCat('Computers')"><i class="ti ti-device-laptop"></i><div class="ctname">Computers</div><div class="ctcount">41 products</div></div>
+        <div class="ctile" onclick="filterCat('Outdoor & Sports')"><i class="ti ti-mountain"></i><div class="ctname">Outdoor & Sports</div><div class="ctcount">68 products</div></div>
+        <div class="ctile" onclick="filterCat('Home & Office')"><i class="ti ti-home"></i><div class="ctname">Home & Office</div><div class="ctcount">43 products</div></div>
+        <div class="ctile" onclick="showPg('shop')"><i class="ti ti-layout-grid"></i><div class="ctname">All Categories</div><div class="ctcount">500+ products</div></div>
+      </div>
+
+      <div class="sec">
+        <div class="sh"><h2>Featured Products</h2><a class="slink" onclick="showPg('shop')">View all →</a></div>
+        <div class="pgrid" id="feat-grid"></div>
+      </div>
+
+      <div class="sec sec-alt">
+        <div class="sh"><h2>New Arrivals</h2><a class="slink" onclick="showPg('shop')">See all →</a></div>
+        <div class="pgrid" id="new-grid"></div>
+      </div>
+
+      <div class="promo">
+        <div>
+          <div class="pey">Limited Time</div>
+          <div class="ptitle">Save up to <em>27%</em> on top brands</div>
+          <div class="psub">Garmin, Logitech, Wusthof, ATN and more — no coupon needed. Deals refreshed weekly. Every purchase supports WWP veterans.</div>
+        </div>
+        <button class="btn-primary" onclick="showPg('shop')">Shop the Sale →</button>
+      </div>
+
+      <footer>
+        <div class="fg">
+          <div class="flogo-area">
+            <div class="wwp-wordmark-footer"><div>WOUNDED</div><div>WARRIOR</div><div style="position:relative;">PROJECT<span class="wwp-reg-footer" style="position:absolute;">®</span></div></div>
+            <p style="font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.3);font-family:'Montserrat',sans-serif;">Official Store</p>
+            <p class="fbody">The official merchandise store of Wounded Warrior Project®. Every purchase supports our mission to honor and empower post-9/11 wounded warriors — from mental health and physical wellness to career transition and family support.</p>
+          </div>
+          <div>
+            <p class="fh">Shop by Category</p>
+            <ul class="ful">
+              <li onclick="filterCat('Audio')">Audio</li>
+              <li onclick="filterCat('GPS & Automotive')">GPS & Automotive</li>
+              <li onclick="filterCat('Health & Fitness')">Health & Fitness</li>
+              <li onclick="filterCat('Kitchen')">Kitchen & Housewares</li>
+              <li onclick="filterCat('Musical Instruments')">Musical Instruments</li>
+              <li onclick="filterCat('Cameras')">Cameras</li>
+              <li onclick="filterCat('Outdoor & Sports')">Outdoor & Sports</li>
+              <li onclick="filterCat('Computers')">Computers</li>
+            </ul>
+          </div>
+          <div>
+            <p class="fh">Customer Help</p>
+            <ul class="ful">
+              <li onclick="showPg('track-order')">Track Order</li>
+              <li onclick="showPg('returns')">Returns</li>
+              <li onclick="showPg('shipping')">Shipping Policy</li>
+              <li onclick="showPg('warranty')">Warranty Info</li>
+              <li onclick="showPg('faq')">FAQ</li>
+              <li onclick="showPg('contact')">Contact Us</li>
+            </ul>
+          </div>
+          <div>
+            <p class="fh">About WWP</p>
+            <ul class="ful">
+              <li onclick="showPg('our-mission')">Our Mission</li>
+              <li onclick="showPg('programs')">Programs & Services</li>
+              <li onclick="showPg('warrior-care')">Warrior Care Network</li>
+              <li onclick="showPg('alumni')">Alumni Connection</li>
+              <li onclick="showPg('donate')">Donate</li>
+              <li><a href="https://www.woundedwarriorproject.org" target="_blank" style="color:inherit;">woundedwarriorproject.org</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="fbot">
+          <span>© 2026 Wounded Warrior Project®. All rights reserved. · Privacy · Terms · Accessibility</span>
+          <div class="powered">Powered by Certified Brands</div>
+        </div>
+      </footer>
+    </div><!-- end home -->
+
+    <!-- ── SHOP ── -->
+    <div class="pg" id="pg-shop">
+      <div class="shophead">
+        <h1 id="shop-title">All Products</h1>
+        <p>Brand new · Manufacturer warranty included · Proceeds support Wounded Warrior Project</p>
+      </div>
+      <div class="shopwrap">
+        <div class="sidebar">
+          <div class="sg">
+            <h4>Brand</h4>
+            <label class="frow"><input type="checkbox" id="fb-all" checked onchange="applyFilters()"> All Brands</label>
+            <label class="frow"><input type="checkbox" class="fbrand" value="Garmin" onchange="applyFilters()"> Garmin</label>
+            <label class="frow"><input type="checkbox" class="fbrand" value="Logitech" onchange="applyFilters()"> Logitech</label>
+            <label class="frow"><input type="checkbox" class="fbrand" value="Wusthof" onchange="applyFilters()"> Wusthof</label>
+            <label class="frow"><input type="checkbox" class="fbrand" value="Polaroid" onchange="applyFilters()"> Polaroid</label>
+            <label class="frow"><input type="checkbox" class="fbrand" value="Vaultek" onchange="applyFilters()"> Vaultek</label>
+            <label class="frow"><input type="checkbox" class="fbrand" value="ATN" onchange="applyFilters()"> ATN</label>
+            <label class="frow"><input type="checkbox" class="fbrand" value="LifeSafe" onchange="applyFilters()"> LifeSafe</label>
+            <label class="frow"><input type="checkbox" class="fbrand" value="ACCUSPLIT" onchange="applyFilters()"> ACCUSPLIT</label>
+            <label class="frow"><input type="checkbox" class="fbrand" value="Ibanez" onchange="applyFilters()"> Ibanez</label>
+            <label class="frow"><input type="checkbox" class="fbrand" value="Dark Energy" onchange="applyFilters()"> Dark Energy</label>
+            <label class="frow"><input type="checkbox" class="fbrand" value="FlightScope" onchange="applyFilters()"> FlightScope</label>
+            <label class="frow"><input type="checkbox" class="fbrand" value="Signature Series" onchange="applyFilters()"> Signature Series</label>
+          </div>
+          <div class="sg">
+            <h4>Category</h4>
+            <label class="frow"><input type="checkbox" id="fc-all" checked onchange="applyFilters()"> All</label>
+            <label class="frow"><input type="checkbox" class="fcat" value="Audio" onchange="applyFilters()"> Audio</label>
+            <label class="frow"><input type="checkbox" class="fcat" value="GPS & Automotive" onchange="applyFilters()"> GPS & Automotive</label>
+            <label class="frow"><input type="checkbox" class="fcat" value="Cameras" onchange="applyFilters()"> Cameras</label>
+            <label class="frow"><input type="checkbox" class="fcat" value="Health & Fitness" onchange="applyFilters()"> Health & Fitness</label>
+            <label class="frow"><input type="checkbox" class="fcat" value="Kitchen" onchange="applyFilters()"> Kitchen</label>
+            <label class="frow"><input type="checkbox" class="fcat" value="Musical Instruments" onchange="applyFilters()"> Musical Instruments</label>
+            <label class="frow"><input type="checkbox" class="fcat" value="Home & Office" onchange="applyFilters()"> Home & Office</label>
+            <label class="frow"><input type="checkbox" class="fcat" value="Outdoor & Sports" onchange="applyFilters()"> Outdoor & Sports</label>
+            <label class="frow"><input type="checkbox" class="fcat" value="Computers" onchange="applyFilters()"> Computers</label>
+          </div>
+          <div class="sg">
+            <h4>Price</h4>
+            <label class="frow"><input type="radio" name="fp" value="all" checked onchange="applyFilters()"> Any price</label>
+            <label class="frow"><input type="radio" name="fp" value="0-50" onchange="applyFilters()"> Under $50</label>
+            <label class="frow"><input type="radio" name="fp" value="50-200" onchange="applyFilters()"> $50 – $200</label>
+            <label class="frow"><input type="radio" name="fp" value="200-500" onchange="applyFilters()"> $200 – $500</label>
+            <label class="frow"><input type="radio" name="fp" value="500+" onchange="applyFilters()"> Over $500</label>
+          </div>
+          <div class="sg">
+            <h4>Availability</h4>
+            <label class="frow"><input type="checkbox" checked> In Stock</label>
+            <label class="frow"><input type="checkbox" id="f-sale" onchange="applyFilters()"> On Sale</label>
+            <label class="frow"><input type="checkbox" id="f-new" onchange="applyFilters()"> New Arrivals</label>
+          </div>
+        </div>
+        <div class="shopmain">
+          <div class="toolbar">
+            <span id="shop-count">Loading…</span>
+            <select class="sortsel" onchange="applyFilters()">
+              <option value="feat">Featured</option>
+              <option value="new">Newest First</option>
+              <option value="lo">Price: Low to High</option>
+              <option value="hi">Price: High to Low</option>
+            </select>
+          </div>
+          <div class="pgrid" id="shop-grid"></div>
+        </div>
+      </div>
+    </div><!-- end shop -->
+
+    <!-- ── CART ── -->
+    <div class="pg" id="pg-cart">
+      <div class="page-header">
+        <h1>Your Cart</h1>
+        <p>Review your items before checkout</p>
+      </div>
+      <div class="cart-pg-wrap">
+        <div class="cart-items-area">
+          <h2 class="cart-pg-head">Cart Items (<span id="cart-item-count">0</span>)</h2>
+          <div id="cart-items-list">
+            <div class="cart-empty-state">
+              <i class="ti ti-shopping-cart"></i>
+              <h3>Your cart is empty</h3>
+              <p>Add some products to get started.</p>
+              <button class="btn-primary" onclick="showPg('shop')">Browse Products</button>
+            </div>
+          </div>
+        </div>
+        <div class="cart-summary-panel">
+          <div class="csp-title">Order Summary</div>
+          <div id="cart-summary-items"></div>
+          <div class="csp-row" style="margin-top:1rem;"><span>Subtotal</span><span id="cs-sub">$0.00</span></div>
+          <div class="csp-row"><span>Shipping</span><span id="cs-ship">Free</span></div>
+          <div class="csp-row"><span>Tax (8%)</span><span id="cs-tax">$0.00</span></div>
+          <div class="csp-total"><span>Total</span><strong id="cs-total">$0.00</strong></div>
+          <div class="promo-input">
+            <input type="text" placeholder="Promo code">
+            <button onclick="showToast('Promo code applied!')">Apply</button>
+          </div>
+          <button class="btn-checkout-full" onclick="showPg('checkout')">Proceed to Checkout</button>
+          <button class="btn-continue" onclick="showPg('shop')">Continue Shopping</button>
+          <p style="font-size:10px;color:var(--g3);text-align:center;margin-top:1rem;line-height:1.6;">
+            <i class="ti ti-lock" style="font-size:11px;"></i> Secure checkout · All products brand new · Manufacturer warranty · Proceeds support WWP
+          </p>
+        </div>
+      </div>
+    </div><!-- end cart -->
+
+    <!-- ── CHECKOUT ── -->
+    <div class="pg" id="pg-checkout">
+      <div class="page-header">
+        <h1>Checkout</h1>
+        <p>Secure SSL-encrypted checkout · All products backed by manufacturer warranty</p>
+      </div>
+      <div class="colayout">
+        <div class="coform">
+          <div class="cosec"><legend class="coleg">Contact Information</legend>
+            <div class="field"><label>Email Address</label><input type="email" placeholder="you@example.com"></div>
+            <div class="field"><label>Phone Number</label><input type="tel" placeholder="(555) 000-0000"></div>
+          </div>
+          <div class="cosec"><legend class="coleg">Shipping Address</legend>
+            <div class="frow2"><div class="field"><label>First Name</label><input type="text" placeholder="Jane"></div><div class="field"><label>Last Name</label><input type="text" placeholder="Smith"></div></div>
+            <div class="field"><label>Street Address</label><input type="text" placeholder="123 Main Street"></div>
+            <div class="field"><label>Apt / Suite</label><input type="text" placeholder="Optional"></div>
+            <div class="frow2"><div class="field"><label>City</label><input type="text" placeholder="Denver"></div><div class="field"><label>State</label><select><option>CO</option><option>NY</option><option>CA</option><option>TX</option><option>FL</option></select></div></div>
+            <div class="frow2"><div class="field"><label>Zip Code</label><input type="text" placeholder="80202"></div><div class="field"><label>Country</label><select><option>United States</option><option>Canada</option></select></div></div>
+          </div>
+          <div class="cosec"><legend class="coleg">Shipping Method</legend>
+            <label class="frow" style="margin-bottom:10px;font-size:13px;"><input type="radio" name="sh" checked style="accent-color:var(--red)"> Standard Shipping (3–5 business days) — <strong>Free</strong></label>
+            <label class="frow" style="font-size:13px;"><input type="radio" name="sh" style="accent-color:var(--red)"> Express Shipping (1–2 business days) — <strong>$12.99</strong></label>
+          </div>
+          <div class="cosec"><legend class="coleg">Payment</legend>
+            <div class="field"><label>Card Number</label><input type="text" placeholder="•••• •••• •••• ••••"></div>
+            <div class="frow2"><div class="field"><label>Expiry Date</label><input type="text" placeholder="MM / YY"></div><div class="field"><label>CVV</label><input type="text" placeholder="•••"></div></div>
+            <div class="field"><label>Name on Card</label><input type="text" placeholder="Jane Smith"></div>
+          </div>
+          <button class="btn-red" style="width:100%;padding:15px;font-size:12px;" onclick="placeOrder()">
+            Place Order — <span id="co-btn-total">$0.00</span>
+          </button>
+          <p style="font-size:10px;color:var(--g3);text-align:center;margin-top:12px;line-height:1.7;">
+            <i class="ti ti-lock" style="font-size:11px;"></i> &nbsp;SSL Encrypted &nbsp;·&nbsp; Authentic Products &nbsp;·&nbsp; Full Manufacturer Warranty &nbsp;·&nbsp; Proceeds support WWP
+          </p>
+        </div>
+        <div class="cosidebar">
+          <h3>Order Summary</h3>
+          <div id="co-items"></div>
+          <div class="trows">
+            <div class="tr"><span>Subtotal</span><span id="co-sub">$0.00</span></div>
+            <div class="tr"><span>Shipping</span><span>Free</span></div>
+            <div class="tr"><span>Tax (8%)</span><span id="co-tax">$0.00</span></div>
+            <div class="tfinal"><span>Total</span><strong id="co-total">$0.00</strong></div>
+          </div>
+        </div>
+      </div>
+    </div><!-- end checkout -->
+
+    <!-- ── ORDER CONFIRMED ── -->
+    <div class="pg" id="pg-order-confirmed">
+      <div class="order-success">
+        <i class="ti ti-circle-check"></i>
+        <h2>Order Confirmed!</h2>
+        <p>Thank you for your order and for supporting Wounded Warrior Project. A confirmation email has been sent to you. Your order will be processed and shipped within 1–2 business days.</p>
+        <p style="font-size:12px;color:var(--g3);">Order #WWP-<span id="order-num">00000</span> &nbsp;·&nbsp; You can track your order under <strong style="color:var(--navy);">Customer Help → Track Order</strong></p>
+        <button class="btn-primary" onclick="showPg('home')" style="margin:1.5rem auto 0;display:inline-block;">Continue Shopping</button>
+      </div>
+    </div>
+
+    <!-- ══ CUSTOMER HELP PAGES (Certified Brands) ══ -->
+
+    <!-- TRACK ORDER -->
+    <div class="pg" id="pg-track-order">
+      <div class="page-header"><h1>Track Your Order</h1><p>Powered by Certified Brands · certifiedbrands.com</p></div>
+      <div class="page-content">
+        <h2>Order Tracking</h2>
+        <p>Once your order is processed and the shipping label is created, you will receive a shipment notification email containing the carrier name, tracking number, and estimated delivery date. You can click the tracking number in the email to track your package directly on the carrier's website.</p>
+        <div class="tracking-form">
+          <div class="field"><label>Order Number</label><input type="text" placeholder="e.g. WWP-20260001"></div>
+          <div class="field"><label>Email Address Used at Checkout</label><input type="email" placeholder="you@example.com"></div>
+          <button class="btn-red" style="margin-top:0.5rem;" onclick="showToast('Order status: In Transit — arriving in 2–3 days')">Track Order</button>
+        </div>
+        <h2>Sample Order Status</h2>
+        <div style="background:var(--nlight);border:1px solid var(--nlight2);padding:1.25rem;margin-bottom:1.5rem;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+            <div>
+              <div style="font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;color:var(--navy);letter-spacing:0.05em;">ORDER #WWP-20261042</div>
+              <div style="font-size:12px;color:var(--g3);margin-top:2px;">Placed May 2, 2026 · 3 items</div>
+            </div>
+            <span class="tag-green">In Transit</span>
+          </div>
+          <div style="font-size:12px;color:var(--g2);line-height:1.7;">
+            <strong style="color:var(--navy);">UPS Ground</strong> · Tracking: 1Z999AA10123456784<br>
+            Estimated delivery: <strong style="color:var(--navy);">May 8, 2026</strong>
+          </div>
+        </div>
+        <h2>Order Status Definitions</h2>
+        <ul>
+          <li><strong>Processing:</strong> Your order has been received and is being verified. You will receive a confirmation email shortly.</li>
+          <li><strong>Shipped:</strong> Your order has left our warehouse and is on its way. A tracking number has been emailed to you.</li>
+          <li><strong>In Transit:</strong> Your package is with the carrier and en route to your address.</li>
+          <li><strong>Out for Delivery:</strong> Your package will be delivered today.</li>
+          <li><strong>Delivered:</strong> Your package has been delivered. Please check your delivery location.</li>
+        </ul>
+        <h2>Need Help?</h2>
+        <p>If you have not received a shipping confirmation after 2 business days, or if your tracking shows no movement for more than 3 days, please <a onclick="showPg('contact')" style="color:var(--navy);font-weight:600;cursor:pointer;">contact us</a> and we will investigate immediately.</p>
+      </div>
+    </div>
+
+    <!-- RETURNS -->
+    <div class="pg" id="pg-returns">
+      <div class="page-header"><h1>Returns Policy</h1><p>Powered by Certified Brands · certifiedbrands.com</p></div>
+      <div class="page-content">
+        <h2>Our Return Guarantee</h2>
+        <p>Certified Brands guarantees 100% satisfaction and stands behind every product we sell. If you are not completely satisfied with your purchase for any reason, we will gladly accept your return within <strong>30 days of delivery</strong> for a full refund of the original purchase price, excluding original shipping and handling charges.</p>
+        <h2>Return Eligibility</h2>
+        <ul>
+          <li>Items must be returned within 30 days of the delivery date.</li>
+          <li>All items must be in <strong>new, unused condition</strong> in their original manufacturer packaging.</li>
+          <li>All packing materials, blank warranty cards, manuals, and accessories must be included.</li>
+          <li>Items showing signs of wear, use, or damage will be refused or subject to a <strong>25% restocking fee</strong>.</li>
+          <li>Serial numbers and security tags (if included) must be intact.</li>
+          <li>Items returned after 30 days from the original delivery date cannot be accepted.</li>
+        </ul>
+        <h2>How to Return</h2>
+        <p>To initiate a return, please contact our customer service team to receive a <strong>Return Merchandise Authorization (RMA) number</strong>. Returns without an RMA number may not be processed. Write the RMA number clearly on the outside of your shipping box.</p>
+        <p>We recommend shipping returns via an <strong>insured, traceable carrier</strong> such as UPS or FedEx. Return shipping charges are the responsibility of the customer. Certified Brands is not responsible for lost or damaged return packages.</p>
+        <h2>Refund Processing</h2>
+        <p>Once your return is received and inspected, your refund will be processed within <strong>5–7 business days</strong> back to your original payment method. You will receive a confirmation email when the refund is issued.</p>
+        <h2>Damaged or Incorrect Items</h2>
+        <p>If you received a damaged item or the wrong product, please contact us within <strong>3 days of delivery</strong> with photos of the issue. We will arrange a prepaid return label and expedite a replacement at no cost to you.</p>
+        <h2>Non-Returnable Items</h2>
+        <ul>
+          <li>Items purchased for resale (resale is strictly prohibited)</li>
+          <li>Items shipped outside the United States (considered final sale)</li>
+          <li>Products that have been used, worn, or show evidence of misuse</li>
+        </ul>
+        <button class="btn-primary" onclick="showPg('contact')" style="margin-top:1rem;">Start a Return →</button>
+      </div>
+    </div>
+
+    <!-- SHIPPING -->
+    <div class="pg" id="pg-shipping">
+      <div class="page-header"><h1>Shipping Policy</h1><p>Powered by Certified Brands · certifiedbrands.com</p></div>
+      <div class="page-content">
+        <h2>Free Shipping</h2>
+        <p>All orders over <strong>$75</strong> ship FREE via standard ground shipping within the continental United States. Orders under $75 are subject to a calculated shipping fee at checkout based on weight and destination.</p>
+        <h2>Shipping Methods & Timelines</h2>
+        <div style="overflow-x:auto;margin:1rem 0 1.5rem;">
+          <table style="width:100%;border-collapse:collapse;font-size:13px;">
+            <thead><tr style="background:var(--navy);color:white;font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;">
+              <th style="padding:10px 14px;text-align:left;">Method</th><th style="padding:10px 14px;text-align:left;">Transit Time</th><th style="padding:10px 14px;text-align:left;">Cost</th>
+            </tr></thead>
+            <tbody>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:10px 14px;color:var(--g2);">Standard Ground</td><td style="padding:10px 14px;color:var(--g2);">3–5 business days</td><td style="padding:10px 14px;color:var(--g2);">Free (orders $75+)</td></tr>
+              <tr style="border-bottom:1px solid var(--border);background:var(--off);"><td style="padding:10px 14px;color:var(--g2);">Express (2-Day)</td><td style="padding:10px 14px;color:var(--g2);">2 business days</td><td style="padding:10px 14px;color:var(--g2);">$12.99</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:10px 14px;color:var(--g2);">Overnight</td><td style="padding:10px 14px;color:var(--g2);">1 business day</td><td style="padding:10px 14px;color:var(--g2);">$24.99</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h2>Processing Time</h2>
+        <p>All orders placed before <strong>2:00 PM MST</strong> on a business day are processed the same day. Orders placed after 2:00 PM MST or on weekends/holidays are processed the next business day. A shipment notification email with tracking information is sent when your order leaves our warehouse.</p>
+        <h2>Order Verification</h2>
+        <p>For your security, all orders go through a verification process before shipment. Your credit card will <strong>only be charged when your order ships</strong> — not at the time of order placement. Our customer service team may contact you if additional verification is needed.</p>
+        <h2>Shipping Restrictions</h2>
+        <ul>
+          <li>We currently ship to all 50 US states and US territories.</li>
+          <li>Some products may have shipping restrictions due to local regulations.</li>
+          <li>Items shipped internationally are considered final sale and cannot be returned.</li>
+          <li>Certified Brands sells to end-user customers only. Resale of purchased products is strictly prohibited.</li>
+        </ul>
+        <h2>Multiple Item Orders</h2>
+        <p>If you order multiple items, you may receive separate shipments and tracking numbers. Each item ships from the nearest available warehouse to ensure the fastest delivery.</p>
+      </div>
+    </div>
+
+    <!-- WARRANTY -->
+    <div class="pg" id="pg-warranty">
+      <div class="page-header"><h1>Warranty Information</h1><p>Powered by Certified Brands · certifiedbrands.com</p></div>
+      <div class="page-content">
+        <h2>Manufacturer Warranty Coverage</h2>
+        <p>As an authorized reseller, <strong>every product sold through this store comes with the full manufacturer's warranty</strong>. Because we purchase directly from the manufacturer, all products are 100% authentic, brand new, and fully covered under the manufacturer's standard warranty terms.</p>
+        <p>This is a key benefit of purchasing through an authorized reseller — gray market or unauthorized sellers cannot guarantee manufacturer warranty coverage.</p>
+        <h2>What Is Covered</h2>
+        <ul>
+          <li>Manufacturing defects in materials and workmanship</li>
+          <li>Failures that occur under normal use conditions</li>
+          <li>Hardware failures not caused by accidental damage or misuse</li>
+          <li>Coverage duration varies by brand and product (typically 1–2 years)</li>
+        </ul>
+        <h2>What Is Not Covered</h2>
+        <ul>
+          <li>Accidental damage, drops, or physical damage</li>
+          <li>Water or liquid damage (unless product is rated waterproof)</li>
+          <li>Damage caused by misuse, neglect, or unauthorized modifications</li>
+          <li>Cosmetic damage such as scratches or dents after delivery</li>
+          <li>Normal wear and tear</li>
+        </ul>
+        <h2>How to Make a Warranty Claim</h2>
+        <p>For warranty service, contact the manufacturer directly using the information in your product's documentation. Keep your order confirmation as proof of purchase — it establishes the purchase date and confirms you purchased from an authorized retailer.</p>
+        <p>If you need assistance navigating a warranty claim, our customer service team is happy to help. <a onclick="showPg('contact')" style="color:var(--navy);font-weight:600;cursor:pointer;">Contact us</a> and we will provide guidance and any documentation you need.</p>
+        <h2>Brand Warranty Contacts</h2>
+        <div class="prog-cards">
+          <div class="prog-card"><i class="ti ti-gps"></i><h3>Garmin</h3><p>garmin.com/en-US/support · 1-800-800-1020</p></div>
+          <div class="prog-card"><i class="ti ti-mouse"></i><h3>Logitech</h3><p>support.logi.com · 1-646-454-3200</p></div>
+          <div class="prog-card"><i class="ti ti-tools-kitchen-2"></i><h3>Wusthof</h3><p>wusthof.com/en-US/contact · 1-800-289-9878</p></div>
+          <div class="prog-card"><i class="ti ti-camera"></i><h3>Polaroid</h3><p>polaroid.com/support</p></div>
+          <div class="prog-card"><i class="ti ti-lock"></i><h3>Vaultek</h3><p>vaultekhq.com/pages/warranty</p></div>
+          <div class="prog-card"><i class="ti ti-crosshair"></i><h3>ATN</h3><p>atncorp.com/support · 1-650-989-5100</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="pg" id="pg-faq">
+      <div class="page-header"><h1>Frequently Asked Questions</h1><p>Powered by Certified Brands · certifiedbrands.com</p></div>
+      <div class="page-content">
+        <h2>Ordering</h2>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Are all products authentic and brand new? <i class="ti ti-chevron-down"></i></div><div class="faq-a">Yes. Certified Brands is an authorized reseller that purchases directly from manufacturers. Every product is 100% authentic, brand new, and fully covered by the manufacturer warranty. We have been in business since 1994 and guarantee 100% satisfaction.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I purchase for resale? <i class="ti ti-chevron-down"></i></div><div class="faq-a">No. Certified Brands sells products to end-user customers only. The resale of products purchased through this store is strictly prohibited. Member access for individuals reselling product purchases will be terminated.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is there a purchase quantity limit? <i class="ti ti-chevron-down"></i></div><div class="faq-a">Due to popularity and supply constraints of some products, Certified Brands may limit purchase quantities. We reserve the right to change quantities available for purchase at any time, even after you place an order.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">When will my credit card be charged? <i class="ti ti-chevron-down"></i></div><div class="faq-a">Your credit card will only be charged when your order ships. We authorize payment during the sale process to ensure funds are available, but the actual charge occurs on the day of shipment.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I ship to a different address than my billing address? <i class="ti ti-chevron-down"></i></div><div class="faq-a">Yes. If you would like to ship to an address other than your billing address, that address must be listed as an "alternate shipping address" with your credit card provider. This may require additional verification.</div></div>
+
+        <h2>Shipping & Delivery</h2>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How long will it take to receive my order? <i class="ti ti-chevron-down"></i></div><div class="faq-a">Standard orders ship in 1 business day and arrive in 3–5 business days. Express (2-day) and overnight options are available at checkout. You will receive a tracking number by email once your order ships.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do you offer free shipping? <i class="ti ti-chevron-down"></i></div><div class="faq-a">Yes! All orders over $75 qualify for free standard ground shipping to any address in the continental United States.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">I ordered multiple items — will they ship together? <i class="ti ti-chevron-down"></i></div><div class="faq-a">Multiple items may ship separately from different warehouse locations to ensure the fastest delivery. You will receive separate tracking numbers for each shipment.</div></div>
+
+        <h2>Returns & Warranty</h2>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is your return policy? <i class="ti ti-chevron-down"></i></div><div class="faq-a">You may return any item within 30 days of delivery for a full refund of the purchase price (excluding shipping). Items must be unused and in original packaging with all accessories and documentation. Contact us to receive a Return Merchandise Authorization (RMA) number before shipping your return.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Are manufacturer warranties included? <i class="ti ti-chevron-down"></i></div><div class="faq-a">Yes. As an authorized reseller purchasing directly from manufacturers, every product carries the full manufacturer warranty. This is not available through unauthorized or gray-market sellers.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What if my item arrived damaged? <i class="ti ti-chevron-down"></i></div><div class="faq-a">Contact us within 3 days of delivery with photos of the damage. We will arrange a prepaid return label and priority replacement at no charge to you.</div></div>
+
+        <h2>About This Store</h2>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How do purchases support Wounded Warrior Project? <i class="ti ti-chevron-down"></i></div><div class="faq-a">This is the official WWP store, powered by Certified Brands. A portion of every purchase supports Wounded Warrior Project programs and services for post-9/11 wounded veterans and their families — at zero cost to warriors.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Who do I contact for customer service? <i class="ti ti-chevron-down"></i></div><div class="faq-a">Our customer service team is available Monday–Friday, 9am–5pm MST. You can reach us by phone at 720-572-4231, by email, or visit Certified Brands at 10601 W Interstate 70 Frontage Rd N #102. See our Contact page for details.</div></div>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="pg" id="pg-contact">
+      <div class="page-header"><h1>Contact Us</h1><p>Customer service powered by Certified Brands</p></div>
+      <div class="page-content">
+        <h2>Get in Touch</h2>
+        <p>Our customer service team is available Monday through Friday, 9:00 AM – 5:00 PM MST. We aim to respond to all inquiries within one business day.</p>
+        <div class="contact-grid">
+          <div class="contact-card"><i class="ti ti-phone"></i><h3>Phone</h3><p><a href="tel:7205724231">720-572-4231</a><br>Mon–Fri, 9am–5pm MST</p></div>
+          <div class="contact-card"><i class="ti ti-mail"></i><h3>Email</h3><p><a href="mailto:support@certifiedbrands.com">support@certifiedbrands.com</a><br>Response within 1 business day</p></div>
+          <div class="contact-card"><i class="ti ti-map-pin"></i><h3>Physical Store</h3><p>10601 W Interstate 70 Frontage Rd N #102<br>Wheat Ridge, CO 80033</p></div>
+          <div class="contact-card"><i class="ti ti-external-link"></i><h3>Certified Brands Website</h3><p><a href="https://certifiedbrands.com" target="_blank">certifiedbrands.com</a><br>Browse full product catalog</p></div>
+        </div>
+        <h2>Send Us a Message</h2>
+        <div class="field"><label>Your Name</label><input type="text" placeholder="Jane Smith" style="max-width:400px;"></div>
+        <div class="field"><label>Email Address</label><input type="email" placeholder="you@example.com" style="max-width:400px;"></div>
+        <div class="field"><label>Order Number (if applicable)</label><input type="text" placeholder="WWP-20260001" style="max-width:400px;"></div>
+        <div class="field"><label>Subject</label><select style="max-width:400px;padding:10px 13px;border:1px solid var(--border);font-family:'Open Sans',sans-serif;font-size:13px;outline:none;"><option>Order Status / Tracking</option><option>Return Request</option><option>Warranty Claim</option><option>Damaged Item</option><option>Product Question</option><option>Other</option></select></div>
+        <div class="field"><label>Message</label><textarea style="width:100%;max-width:500px;height:120px;border:1px solid var(--border);padding:10px 13px;font-family:'Open Sans',sans-serif;font-size:13px;font-weight:300;outline:none;resize:vertical;" placeholder="Describe your issue or question…"></textarea></div>
+        <button class="btn-primary" onclick="showToast('Message sent! We will respond within 1 business day.')">Send Message</button>
+      </div>
+    </div>
+
+    <!-- ══ ABOUT WWP PAGES ══ -->
+
+    <!-- OUR MISSION -->
+    <div class="pg" id="pg-our-mission">
+      <div class="page-header"><h1>Our Mission</h1><p>Source: woundedwarriorproject.org/mission</p></div>
+      <div class="page-content">
+        <p style="font-size:16px;font-weight:600;color:var(--navy);line-height:1.6;border-left:4px solid var(--red);padding-left:1rem;margin-bottom:2rem;">"To honor and empower wounded warriors. To foster the most successful, well-adjusted generation of wounded service members in our nation's history."</p>
+        <h2>Who We Serve</h2>
+        <p>Wounded Warrior Project® (WWP) is the nation's leading veterans service organization, dedicated to the total well-being of post-9/11 wounded, ill, or injured veterans and their families. From mental health and physical wellness to VA benefits assistance, peer support, and more, we're changing the way our nation cares for veterans and helping them thrive for a lifetime.</p>
+        <p>Post-9/11 wounded, ill, or injured veterans and their families are eligible to join WWP and never pay a penny for our services and support. Those who are currently on active duty, transitioning, or served on or after September 11, 2001, may be eligible. A disability rating is not required.</p>
+        <h2>Our Impact in Numbers</h2>
+        <div class="stat-grid">
+          <div class="stat-card"><span class="stat-num">272,000+</span><span class="stat-label">Warriors, families & caregivers served</span></div>
+          <div class="stat-card"><span class="stat-num">$2.7B</span><span class="stat-label">Invested in programs since 2003</span></div>
+          <div class="stat-card"><span class="stat-num">70%+</span><span class="stat-label">Of spending directly on programs</span></div>
+          <div class="stat-card"><span class="stat-num">2,250+</span><span class="stat-label">New registrations per month in 2024</span></div>
+          <div class="stat-card"><span class="stat-num">6,490+</span><span class="stat-label">Events to connect veterans in 2024</span></div>
+          <div class="stat-card"><span class="stat-num">$223M</span><span class="stat-label">In veterans' benefits claims secured</span></div>
+        </div>
+        <h2>Our Commitments</h2>
+        <ul>
+          <li>Provide the most critical services to warriors most in need by assessing their challenges and prioritizing the programs we offer while improving their quality of life.</li>
+          <li>Expand program partnerships with nonprofit, for-profit, and government agencies.</li>
+          <li>Build connections and strong communities as a foundation for warrior well-being.</li>
+          <li>Offer health care programs that are comprehensive and tailored to each warrior's unique needs.</li>
+          <li>Advocate through innovation, leadership, and advocacy to keep our promise to honor and empower those we serve.</li>
+        </ul>
+        <h2>Recognition & Accountability</h2>
+        <p>WWP holds a <strong>2025 Platinum Seal of Transparency</strong> from Candid (formerly GuideStar). Wounded Warrior Project has a <strong>four-star rating</strong> — the highest possible — from Charity Navigator. We are a Better Business Bureau (BBB) accredited charity that has met all standards for accountability.</p>
+        <p>More than 70% — over $263 million in fiscal year 2024 — was spent directly on programs and services for wounded warriors, families, and caregivers.</p>
+        <div class="donate-banner">
+          <h2>Support Our Warriors</h2>
+          <p>Every dollar helps fund free programs and services for post-9/11 veterans and their families.</p>
+          <button class="btn-white" onclick="showPg('donate')">Donate to WWP →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROGRAMS -->
+    <div class="pg" id="pg-programs">
+      <div class="page-header"><h1>Programs & Services</h1><p>Source: woundedwarriorproject.org/programs</p></div>
+      <div class="page-content">
+        <p>All Wounded Warrior Project programs and services are offered at <strong>absolutely no cost</strong> to warriors and their families — made possible entirely by the generosity of donors and partners. Since 2003, WWP has invested nearly $2.7 billion in these programs.</p>
+        <h2>Mental & Brain Health</h2>
+        <div class="prog-cards">
+          <div class="prog-card"><i class="ti ti-brain"></i><h3>Mental Health Support</h3><p>WWP provided more than 68,600 hours of treatment for warriors coping with PTSD, traumatic brain injuries, substance abuse disorder, and military sexual trauma in 2024.</p></div>
+          <div class="prog-card"><i class="ti ti-heart-handshake"></i><h3>Peer Support</h3><p>Connection with fellow veterans who understand the experience. Peer mentoring and group programs that reduce isolation and build community.</p></div>
+          <div class="prog-card"><i class="ti ti-yoga"></i><h3>Wellness Programs</h3><p>Yoga, meditation, and holistic wellness programming designed specifically for veterans dealing with unseen wounds.</p></div>
+        </div>
+        <h2>Physical Health & Wellness</h2>
+        <div class="prog-cards">
+          <div class="prog-card"><i class="ti ti-run"></i><h3>Adaptive Sports</h3><p>Adaptive sports programs that help wounded warriors rebuild confidence, camaraderie, and physical capabilities through sport and competition.</p></div>
+          <div class="prog-card"><i class="ti ti-wheelchair"></i><h3>Independence Program</h3><p>Comprehensive support for the most severely injured veterans, helping them achieve maximum independence and improve quality of life.</p></div>
+        </div>
+        <h2>Career & Financial Wellness</h2>
+        <div class="prog-cards">
+          <div class="prog-card"><i class="ti ti-briefcase"></i><h3>Warriors to Work</h3><p>Career counseling, job training, and employment assistance to help veterans transition successfully to civilian careers.</p></div>
+          <div class="prog-card"><i class="ti ti-report-money"></i><h3>Financial Counseling</h3><p>Financial education, counseling, and assistance to help warriors achieve long-term financial stability and independence.</p></div>
+          <div class="prog-card"><i class="ti ti-file-check"></i><h3>Benefits Services</h3><p>WWP helped veterans secure over $223 million in VA benefits claims in 2024 through benefits counseling and claims assistance.</p></div>
+        </div>
+        <h2>Connection & Community</h2>
+        <div class="prog-cards">
+          <div class="prog-card"><i class="ti ti-users"></i><h3>Community Events</h3><p>WWP held more than 6,490 events in 2024 to connect wounded veterans with their peers, building the social bonds that protect mental health.</p></div>
+          <div class="prog-card"><i class="ti ti-home-heart"></i><h3>Family Support</h3><p>Programs for spouses, children, and caregivers who support wounded warriors — because healing the warrior means supporting the whole family.</p></div>
+          <div class="prog-card"><i class="ti ti-world"></i><h3>Community Partners</h3><p>WWP partners with 39+ best-in-class military and veterans organizations to expand the network of support available to warriors nationwide.</p></div>
+        </div>
+        <div class="donate-banner">
+          <h2>These Programs Are Free Thanks to Donors Like You</h2>
+          <p>100% of your donation supports wounded warriors. Your purchase here helps fund these programs.</p>
+          <button class="btn-white" onclick="showPg('donate')">Make a Donation →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- WARRIOR CARE NETWORK -->
+    <div class="pg" id="pg-warrior-care">
+      <div class="page-header"><h1>Warrior Care Network®</h1><p>Source: woundedwarriorproject.org</p></div>
+      <div class="page-content">
+        <p style="font-size:16px;font-weight:600;color:var(--navy);line-height:1.6;border-left:4px solid var(--red);padding-left:1rem;margin-bottom:2rem;">Warrior Care Network is WWP's partnership with four leading academic medical centers to pioneer clinical trauma care and research for veterans.</p>
+        <h2>About Warrior Care Network</h2>
+        <p>Established in 2016, Warrior Care Network® is a $100 million initiative that includes four PTSD treatment centers located in Atlanta, Boston, Los Angeles, and Chicago. The network provides access to high-quality care for veterans dealing primarily with post-traumatic stress disorder (PTSD) and traumatic brain injury (TBI).</p>
+        <p>In 2024, WWP invested an additional <strong>$100 million</strong> to fund programs for post-9/11 veterans that aim to reduce depression, anxiety, and substance use disorders.</p>
+        <h2>Treatment Approach</h2>
+        <ul>
+          <li>Group therapy with other veterans to learn coping strategies in a peer environment</li>
+          <li>Evidence-based treatments for PTSD, TBI, substance abuse disorder, and military sexual trauma</li>
+          <li>Holistic wellness programming including yoga and meditation</li>
+          <li>Clinical research to improve outcomes for future veterans</li>
+          <li>Partnerships with leading academic medical centers for cutting-edge care</li>
+        </ul>
+        <h2>Treatment Centers</h2>
+        <div class="prog-cards">
+          <div class="prog-card"><i class="ti ti-building-hospital"></i><h3>Atlanta, GA</h3><p>Emory Healthcare Veterans Program — specializing in PTSD and TBI treatment through evidence-based therapies.</p></div>
+          <div class="prog-card"><i class="ti ti-building-hospital"></i><h3>Boston, MA</h3><p>Home Base Program at Massachusetts General Hospital — a national center of excellence for veterans and military families.</p></div>
+          <div class="prog-card"><i class="ti ti-building-hospital"></i><h3>Los Angeles, CA</h3><p>UCLA Operation Mend — intensive outpatient programs for veterans and their families dealing with unseen wounds.</p></div>
+          <div class="prog-card"><i class="ti ti-building-hospital"></i><h3>Chicago, IL</h3><p>Rush University Medical Center — trauma-focused care combining clinical treatment with community support.</p></div>
+        </div>
+        <h2>Program Impact</h2>
+        <p>Programs like Warrior Care Network are contributing to a declining rate of suicide among former service members. According to research, social support among veterans has been associated with better quality of life and serves as a protective factor against suicidal thoughts.</p>
+        <p>In 2024, WWP provided more than <strong>68,600 hours of treatment</strong> for warriors coping with unseen wounds.</p>
+        <div class="donate-banner">
+          <h2>Help Fund Warrior Care</h2>
+          <p>Your support makes life-changing mental health care available to veterans at no cost.</p>
+          <button class="btn-white" onclick="showPg('donate')">Donate Now →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ALUMNI -->
+    <div class="pg" id="pg-alumni">
+      <div class="page-header"><h1>Alumni Connection Program</h1><p>Source: woundedwarriorproject.org</p></div>
+      <div class="page-content">
+        <p style="font-size:16px;font-weight:600;color:var(--navy);line-height:1.6;border-left:4px solid var(--red);padding-left:1rem;margin-bottom:2rem;">"If I can be a part of an organization that helps people heal and find peace, then the end of my service is not the end. I'm just serving in a new way now." — WWP Warrior</p>
+        <h2>About the Alumni Connection Program</h2>
+        <p>The Alumni Connection Program brings together Wounded Warrior Project alumni — warriors who have participated in WWP programs and services — to form a powerful community of veterans who support each other and give back to those still on their journey of recovery.</p>
+        <p>WWP believes that those who were once carried can and will become a pillar of strength for others. The Alumni Connection Program embodies this belief, creating a cycle of service where healed warriors become mentors and advocates for those still in need.</p>
+        <h2>What Alumni Do</h2>
+        <div class="prog-cards">
+          <div class="prog-card"><i class="ti ti-users"></i><h3>Peer Mentoring</h3><p>Alumni warriors mentor newer members, sharing their experiences and providing peer-to-peer guidance through the recovery journey.</p></div>
+          <div class="prog-card"><i class="ti ti-speakerphone"></i><h3>Advocacy</h3><p>Alumni advocate on behalf of all veterans at the local, state, and national level, amplifying the WWP mission in their communities.</p></div>
+          <div class="prog-card"><i class="ti ti-confetti"></i><h3>Community Events</h3><p>Alumni organize and participate in connection events, fundraisers, and outreach efforts that strengthen the veteran community.</p></div>
+          <div class="prog-card"><i class="ti ti-heart"></i><h3>Fundraising</h3><p>Alumni raise funds for WWP programs through events like the Carry Forward 5K, helping ensure future warriors receive the same support they did.</p></div>
+        </div>
+        <h2>Carry Forward 5K</h2>
+        <p>The Carry Forward 5K is WWP's signature fundraising event, giving supporters a tangible way to put the mission in motion. Thousands of warriors, alumni, and supporters participate each year — running, walking, or rolling to raise funds and awareness for wounded veterans.</p>
+        <p>Location: 4899 Belfort Road, Suite 300, Jacksonville, FL 32256<br>
+        Phone: 833.WWP.4WRD (997.4973)<br>
+        Email: <a href="mailto:carryforward@woundedwarriorproject.org" style="color:var(--navy);">carryforward@woundedwarriorproject.org</a></p>
+        <h2>Join the Alumni Community</h2>
+        <p>If you are a WWP alumni warrior interested in giving back, connecting with fellow veterans, or participating in advocacy and fundraising efforts, visit <a href="https://www.woundedwarriorproject.org" target="_blank" style="color:var(--navy);font-weight:600;">woundedwarriorproject.org</a> to learn how to get involved.</p>
+      </div>
+    </div>
+
+    <!-- DONATE -->
+    <div class="pg" id="pg-donate">
+      <div class="page-header"><h1>Donate to WWP</h1><p>Support wounded warriors · woundedwarriorproject.org</p></div>
+      <div class="page-content">
+        <p style="font-size:15px;line-height:1.8;color:var(--g2);margin-bottom:1.5rem;">Every dollar you donate supports Wounded Warrior Project's free programs and services for post-9/11 wounded veterans and their families. <strong style="color:var(--navy);">100% of your donation</strong> supports wounded warriors — with more than 70% spent directly on programs and services.</p>
+        <h2>Your Donation at Work</h2>
+        <div class="stat-grid">
+          <div class="stat-card"><span class="stat-num" style="font-size:22px;">$25</span><span class="stat-label">Funds peer support for 1 warrior for a week</span></div>
+          <div class="stat-card"><span class="stat-num" style="font-size:22px;">$50</span><span class="stat-label">Provides mental health resources for a family</span></div>
+          <div class="stat-card"><span class="stat-num" style="font-size:22px;">$100</span><span class="stat-label">Supports career counseling for 1 veteran</span></div>
+          <div class="stat-card"><span class="stat-num" style="font-size:22px;">$250</span><span class="stat-label">Funds 2 hours of clinical trauma treatment</span></div>
+        </div>
+        <h2>Ways to Give</h2>
+        <div class="prog-cards">
+          <div class="prog-card"><i class="ti ti-credit-card"></i><h3>One-Time Gift</h3><p>Make a one-time donation of any amount. Every gift makes a difference in the life of a warrior.</p></div>
+          <div class="prog-card"><i class="ti ti-refresh"></i><h3>Monthly Giving</h3><p>Become a Carry Forward™ monthly donor. Sustained giving allows WWP to plan programs and reach more warriors.</p></div>
+          <div class="prog-card"><i class="ti ti-building"></i><h3>Corporate Partnerships</h3><p>Partner with WWP to fulfill your organization's commitment to veterans. Corporate partners receive recognition and impact reporting.</p></div>
+          <div class="prog-card"><i class="ti ti-award"></i><h3>Tribute Gifts</h3><p>Honor a veteran, warrior, or loved one with a tribute gift. A notification will be sent to the honoree or their family.</p></div>
+        </div>
+        <h2>Make Your Donation</h2>
+        <p>To make a secure donation, visit the official Wounded Warrior Project website:</p>
+        <a href="https://support.woundedwarriorproject.org/donate" target="_blank">
+          <button class="btn-primary" style="margin-top:0.5rem;">Donate at woundedwarriorproject.org →</button>
+        </a>
+        <p style="font-size:12px;color:var(--g3);margin-top:1rem;">Wounded Warrior Project is a registered 501(c)(3) nonprofit organization. Your donation may be tax-deductible to the extent allowed by law. Tax ID: 20-2370934</p>
+        <div class="donate-banner" style="margin-top:2rem;">
+          <h2>Shop to Support</h2>
+          <p>Can't donate today? Every purchase in this store also supports the WWP mission. Shop our catalog of top brands and make a difference.</p>
+          <button class="btn-white" onclick="showPg('shop')">Shop Now →</button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ── PRODUCT DETAIL ── -->
+    <div class="pg" id="pg-product">
+      <div class="pdp-wrap">
+        <div class="pdp-breadcrumb" id="pdp-breadcrumb"></div>
+        <div class="pdp-body">
+          <div class="pdp-gallery">
+            <div class="pdp-img-main">
+              <img id="pdp-img" src="" alt="" onerror="this.style.display='none';document.getElementById('pdp-icon').style.display='flex'">
+              <div id="pdp-icon" class="pdp-icon-fallback" style="display:none;"></div>
+            </div>
+          </div>
+          <div class="pdp-info">
+            <div class="pdp-brand" id="pdp-brand"></div>
+            <h1 class="pdp-title" id="pdp-title"></h1>
+            <div class="pdp-badges" id="pdp-badges"></div>
+            <div class="pdp-price-row" id="pdp-price-row"></div>
+            <p class="pdp-desc" id="pdp-desc"></p>
+            <ul class="pdp-features" id="pdp-features"></ul>
+            <div class="pdp-actions">
+              <div class="pdp-qty-wrap">
+                <button class="pdp-qty-btn" onclick="pdpQtyChange(-1)">−</button>
+                <span class="pdp-qty" id="pdp-qty">1</span>
+                <button class="pdp-qty-btn" onclick="pdpQtyChange(1)">+</button>
+              </div>
+              <button class="pdp-atc" id="pdp-atc" onclick="pdpAddToCart()">
+                <i class="ti ti-shopping-cart"></i> Add to Cart
+              </button>
+            </div>
+            <div class="pdp-meta">
+              <span><i class="ti ti-truck"></i> Free shipping on orders $75+</span>
+              <span><i class="ti ti-shield-check"></i> Manufacturer warranty included</span>
+              <span><i class="ti ti-refresh"></i> 30-day returns</span>
+            </div>
+          </div>
+        </div>
+        <div class="pdp-related">
+          <h2 class="pdp-related-title">You May Also Like</h2>
+          <div class="pgrid" id="pdp-related-grid"></div>
+        </div>
+      </div>
+    </div>
+  </div><!-- end site-inner -->
+
+  <div class="toast" id="toast"></div>
+</div><!-- end site -->
+
+  <script src="js/store.js"></script>
